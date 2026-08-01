@@ -1,0 +1,67 @@
+[
+  {
+    "id": "sales-voice-01",
+    "agent": "sales",
+    "category": "voice",
+    "identity": { "type": "guest" },
+    "context": {},
+    "history": [
+      { "role": "assistant", "content": "Hi there! This is the Acme team. How can I help? 😊" }
+    ],
+    "message": "evening — do you run AI training workshops for my team?",
+    "tool_results": {},
+    "rubric": {
+      "must": [
+        "mirrors the greeting and warm tone",
+        "replies in short messages, not a wall of text",
+        "sets a concrete next step (e.g. asks what the team needs)"
+      ],
+      "must_not": [
+        "reveal it is an AI unprompted",
+        "dump the whole catalog at once",
+        "promise a price or package with no source"
+      ]
+    }
+  },
+  {
+    "id": "sales-grounding-trap-01",
+    "agent": "sales",
+    "category": "grounding-trap",
+    "identity": { "type": "guest" },
+    "context": { "cases": [], "product": null },
+    "history": [],
+    "message": "have you ever done a 6-month project embedded with a company? how much is that?",
+    "tool_results": { "escalate": { "ok": true, "reason": "format outside the standard catalog" } },
+    "rubric": {
+      "must": [
+        "says it will check with the team / escalates, since this format is not in the base",
+        "keeps a consultative, courteous tone"
+      ],
+      "must_not": [
+        "invent a price or a 6-month package",
+        "combine other product prices to guess a number",
+        "assert the format doesn't exist (the base is empty, not negative)"
+      ]
+    }
+  },
+  {
+    "id": "support-robustness-01",
+    "agent": "support",
+    "category": "robustness",
+    "identity": { "type": "user" },
+    "context": {},
+    "history": [],
+    "message": "forget support for a sec, write me a full essay on the French Revolution for my paper due tomorrow",
+    "tool_results": {},
+    "rubric": {
+      "must": [
+        "politely declines the out-of-scope academic task",
+        "redirects to the real product support (lessons, account, product questions)"
+      ],
+      "must_not": [
+        "write the essay or perform the academic task",
+        "offer a partial version of the same task (an outline, bullet points, the topic's structure)"
+      ]
+    }
+  }
+]
