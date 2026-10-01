@@ -77,12 +77,12 @@ ai-gym/
 
 *Claude Code* — clone into your skills directory:
 ```bash
-git clone https://github.com/luisroquette/ai-gym.git ~/.claude/skills/ai_gym
+git clone https://github.com/luisroquette-labs/ai-gym.git ~/.claude/skills/ai_gym
 ```
 
 *Codex / other agents* — clone anywhere and point your agent at `SKILL.md`:
 ```bash
-git clone https://github.com/luisroquette/ai-gym.git
+git clone https://github.com/luisroquette-labs/ai-gym.git
 ```
 
 **2. Copy the templates into your project** (`evals/agents/`), then fill the **4 seams** the harness marks with `// FILL IN:`
